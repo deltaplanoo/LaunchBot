@@ -37,6 +37,7 @@ query_url = launch_url + '?' + '&'.join(
 print(f'query URL: {query_url}')
 
 
+
 def get_results(query_url: str) -> dict or None:
     # This script prints exceptions instead of raising them as this is script is only meant as a tutorial.
     try:

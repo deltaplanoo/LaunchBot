@@ -1,26 +1,24 @@
 from datetime import datetime, timedelta
 import requests
 
-# URL
+# ===== [URL] ===== #
 base_url = 'https://lldev.thespacedevs.com'
 # Get info about
 launch = '/2.2.0/launch/'
 # Compose
 launch_url = base_url+launch
 
-# Time frame: now - 31 days ago
+
+# ===== [FILTERS & MORE] ===== #
 now = datetime.now()
 month_ago = now - timedelta(days=31)
 next_month = now + timedelta(days=31)
 
-
-# ===== [FILTERS] ===== #
 net_filters = f'net__gte={now.isoformat()}&net__lte={next_month.isoformat()}'
 lsp_filter = 'lsp__name=SpaceX'
 orbital_filter = 'include_suborbital=false'
 
 filters = '&'.join((net_filters, lsp_filter, orbital_filter))
-
 
 # normal, list or detailed
 mode = 'mode=list'
@@ -30,6 +28,7 @@ limit = 'limit=5'
 
 # Ordering the results by ? (NET)
 ordering = 'ordering=net'
+
 
 # ===== [QUERY URL] ===== #
 query_url = launch_url + '?' + '&'.join(

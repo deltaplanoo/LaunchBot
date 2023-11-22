@@ -2,61 +2,44 @@ from datetime import datetime, timedelta
 import requests
 
 # URL
-launch_base_url = 'https://lldev.thespacedevs.com/2.2.0/launch/'
+base_url = 'https://lldev.thespacedevs.com'
+# Get info about
+launch = '/2.2.0/launch/'
+# Compose
+launch_url = base_url+launch
 
 # Time frame: now - 31 days ago
 now = datetime.now()
 month_ago = now - timedelta(days=31)
+next_month = now + timedelta(days=31)
 
-# Adding the time frame to the filters
-net_filters = f'net__gte={month_ago.isoformat()}&net__lte={now.isoformat()}'
-# Only SpaceX as the launch service provider
-lsp_filter = 'lsp__id=121'
-# No suborbital launches
+
+# ===== [FILTERS] ===== #
+net_filters = f'net__gte={now.isoformat()}&net__lte={next_month.isoformat()}'
+lsp_filter = 'lsp__name=SpaceX'
 orbital_filter = 'include_suborbital=false'
 
-# Combine filters
-filters = '&'.join(
-    (net_filters, lsp_filter, orbital_filter)
-)
+filters = '&'.join((net_filters, lsp_filter, orbital_filter))
 
-# Set mode to detailed to include all related objects
-mode = 'mode=detailed'
+
+# normal, list or detailed
+mode = 'mode=list'
 
 # Limit returned results to just 2 per query
-limit = 'limit=2'
+limit = 'limit=5'
 
-# Ordering the results by ascending T-0 (NET)
+# Ordering the results by ? (NET)
 ordering = 'ordering=net'
 
-# Assemble the query URL
-query_url = launch_base_url + '?' + '&'.join(
+# ===== [QUERY URL] ===== #
+query_url = launch_url + '?' + '&'.join(
     (filters, mode, limit, ordering)
 )
 print(f'query URL: {query_url}')
 
-# Function to handle requesting data
+
 def get_results(query_url: str) -> dict or None:
-    """
-    Requests data using
-    the request GET method.
-
-    Parameters
-    ----------
-    quer_url : str
-        URL to query.
-
-    Returns
-    -------
-    results : dict or None
-        Results from the query.
-
-    Notes
-    -----
-    Prints exceptions instead of
-    raising them as this is script
-    is only meant as a tutorial.
-    """
+    # This script prints exceptions instead of raising them as this is script is only meant as a tutorial.
     try:
         # Requesting data
         results = requests.get(query_url)

@@ -6,9 +6,8 @@ header, header a {
   text-decoration: none;
 }
 
-body.dark-mode {
-  background-color: var(--gb-dark0);
-  color: var(--gb-light0);
+a.nav-link, nav button {
+  color: var(--gb-light0)
 }
 
 #theme-toggle {
@@ -16,4 +15,9 @@ body.dark-mode {
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
+}
+
+body.dark-mode{
+  background-color: var(--gb-dark0);
+  color: var(--gb-light0);
 }

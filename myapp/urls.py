@@ -6,5 +6,5 @@ from . import views
 
 # URLconf
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.index, name='index'),
 ]

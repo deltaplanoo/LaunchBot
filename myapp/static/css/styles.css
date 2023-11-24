@@ -1,0 +1,23 @@
+@import url(./gruvbox.css);
+
+header, header a {
+  background-color: var(--gb-dark1);
+  color: var(--gb-light0);
+  text-decoration: none;
+}
+
+a.nav-link, nav button {
+  color: var(--gb-light0)
+}
+
+#theme-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+body.dark-mode{
+  background-color: var(--gb-dark0);
+  color: var(--gb-light0);
+}

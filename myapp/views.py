@@ -4,10 +4,17 @@ import json
 from .launch import *
 
 def index(request):
-
     if not results:
         return render(request, 'error.html')
     
     context = {'json_data': results}
 
     return render(request, 'index.html', context)
+
+def upcoming(request):
+    if not results:
+        return render(request, 'error.html')
+    
+    context = {'json_data': results}
+
+    return render(request, 'upcoming.html', context)

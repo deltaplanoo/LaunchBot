@@ -7,4 +7,5 @@ from . import views
 # URLconf
 urlpatterns = [
     path('', views.index, name='index'),
+    path('upcoming', views.upcoming, name='upcoming'),
 ]

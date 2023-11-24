@@ -4,37 +4,21 @@
 
 {% block content %}
   <div class="container">
-    <div class="col-8">
-      <!-- Launch List -->
-      <!-- TODO: change row color based on status -->
-      <!-- TODO: change table theme based on global site theme -->
-      <!-- <table class="table table-dark table-striped table-hover"></table> -->
-      
-      <table class="table table-dark table-striped table-hover" border="1">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Status</th>
-            <th>NET</th>
-            <th>Mission</th>
-            <th>Location</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for launch in json_data.results %}
-            <tr>
-              <td>{{ launch.name }}</td>
-              <td>{{ launch.status.name }}</td>
-              <td>{{ launch.net }}</td>
-              <td>{{ launch.mission }}</td>
-              <td>{{ launch.location }}</td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-    <div class="col-4">
-      <!-- Next Launch Card-->
+    <div class="card text-center mx-auto" style="width: 70vw;">
+      <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
     </div>
   </div>
 {% endblock %}

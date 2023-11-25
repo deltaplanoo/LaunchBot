@@ -1,13 +1,20 @@
 @import url(./gruvbox.css);
 
+:root {
+  --hf-bg-color: var(--gb-light0);
+  --hf-color: var(--gb-dark0);
+  --copyright-bg-color: var(--gb-light1);
+  --copyright-color: var(--gb-dark0);
+}
+
 header, header a {
-  background-color: var(--gb-dark1);
-  color: var(--gb-light0);
+  background-color: var(--hf-bg-color);
+  color: var(--hf-color);
   text-decoration: none;
 }
 
 a.nav-link, nav button {
-  color: var(--gb-light0)
+  color: var(--gb-light0);
 }
 
 #theme-toggle {
@@ -17,7 +24,15 @@ a.nav-link, nav button {
   font-size: 1.5rem;
 }
 
-body.dark-mode{
+body.dark-mode {
   background-color: var(--gb-dark0);
   color: var(--gb-light0);
+}
+
+footer {
+  background-color: var(--hf-bg-color);
+}
+
+footer #copyright {
+  background-color: var(--copyrightcolor);
 }

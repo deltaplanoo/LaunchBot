@@ -1,8 +1,48 @@
+from datetime import datetime, timedelta
 import requests
 
-# TEST QUERY
-query_url = "https://lldev.thespacedevs.com/2.2.0/launch/?net__gte=2023-10-22T12:10:42.168983&net__lte=2023-11-22T12:10:42.168983&lsp__name=SpaceX&include_suborbital=false&mode=list&limit=2&ordering=-net"
+# ===== [URL] ===== #
+base_url = 'https://lldev.thespacedevs.com'
+# Get info about
+launch = '/2.2.0/launch/'
+# Compose
+launch_url = base_url+launch
 
+
+# ===== [FILTERS & MORE] ===== #
+now = datetime.now()
+month_ago = now - timedelta(days=31)
+next_month = now + timedelta(days=31)
+
+net_filters = f'net__gte={now.isoformat()}&net__lte={next_month.isoformat()}'
+lsp_filter = 'lsp__name=SpaceX'
+orbital_filter = 'include_suborbital=false'
+
+filters = '&'.join((net_filters, lsp_filter, orbital_filter))
+
+# normal, list or detailed
+mode = 'mode=list'
+
+# Limit returned results to just 2 per query
+limit = 'limit=5'
+
+# Ordering the results by ? (NET)
+ordering = 'ordering=net'
+
+
+# ===== [QUERY URL] ===== #
+query_url = launch_url + '?' + '&'.join(
+    (filters, mode, limit, ordering)
+)
+
+def split_datetime(data):
+    for launch in data['results']:
+        launch['date'] = launch['net'][:10]
+        launch['time'] = launch['net'][11:19]
+        # Move 'date' and 'time' after 'net'
+        launch['net'] = {'date': launch['date'], 'time': launch['time']}
+        launch.pop('date', None)
+        launch.pop('time', None)
 
 def get_results(query_url: str) -> dict or None:
     # This script prints exceptions instead of raising them as this is script is only meant as a tutorial.
@@ -21,9 +61,10 @@ def get_results(query_url: str) -> dict or None:
         # See: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
         if status != 200:
             return
-
         # Converting to JSON and returning
         return results.json()
 
+
 # Perform first query
 results = get_results(query_url)
+split_datetime(results)

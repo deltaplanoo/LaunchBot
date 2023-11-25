@@ -24,7 +24,7 @@ filters = '&'.join((net_filters, lsp_filter, orbital_filter))
 mode = 'mode=list'
 
 # Limit returned results to just 2 per query
-limit = 'limit=5'
+limit = 'limit=2'
 
 # Ordering the results by ? (NET)
 ordering = 'ordering=net'
@@ -37,6 +37,16 @@ query_url = launch_url + '?' + '&'.join(
 print(f'query URL: {query_url}')
 
 
+
+
+def split_datetime(data):
+    for launch in data['results']:
+        launch['date'] = launch['net'][:10]
+        launch['time'] = launch['net'][11:19]
+        # Move 'date' and 'time' after 'net'
+        launch['net'] = {'date': launch['date'], 'time': launch['time']}
+        launch.pop('date', None)
+        launch.pop('time', None)
 
 def get_results(query_url: str) -> dict or None:
     # This script prints exceptions instead of raising them as this is script is only meant as a tutorial.
@@ -68,6 +78,7 @@ if not results:
     # use your own error handling here
     quit()
 
+split_datetime(results)
 # Printing resulting dictionary
 print(results)
 

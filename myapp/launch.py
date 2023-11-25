@@ -13,18 +13,19 @@ launch_url = base_url+launch
 now = datetime.now()
 month_ago = now - timedelta(days=31)
 next_month = now + timedelta(days=31)
+future = now + timedelta(days=90)
 
-net_filters = f'net__gte={now.isoformat()}&net__lte={next_month.isoformat()}'
-lsp_filter = 'lsp__name=SpaceX'
+net_filters = f'net__gte={now.isoformat()}&net__lte={future.isoformat()}'
+# lsp_filter = 'lsp__name=SpaceX'
 orbital_filter = 'include_suborbital=false'
 
-filters = '&'.join((net_filters, lsp_filter, orbital_filter))
+filters = '&'.join((net_filters, orbital_filter))
 
 # normal, list or detailed
 mode = 'mode=list'
 
 # Limit returned results to just 2 per query
-limit = 'limit=5'
+limit = 'limit=10'
 
 # Ordering the results by ? (NET)
 ordering = 'ordering=net'

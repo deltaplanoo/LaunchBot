@@ -14,7 +14,7 @@ header, header a {
 }
 
 a.nav-link, nav button {
-  color: var(--gb-light0);
+  color: var(--gb-dark0);
 }
 
 #theme-toggle {

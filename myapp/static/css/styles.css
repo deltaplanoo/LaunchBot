@@ -7,14 +7,10 @@
   --copyright-color: var(--gb-dark0);
 }
 
-header, header a {
+header, header a, a.nav-link, nav button {
   background-color: var(--hf-bg-color);
   color: var(--hf-color);
   text-decoration: none;
-}
-
-a.nav-link, nav button {
-  color: var(--gb-dark0);
 }
 
 #theme-toggle {

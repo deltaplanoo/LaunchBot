@@ -18,3 +18,19 @@ def upcoming(request):
     context = {'json_data': results}
 
     return render(request, 'upcoming.html', context)
+
+def spacex(request):
+    if not results:
+        return render(request, 'error.html')
+    
+    context = {'json_data': results}
+
+    return render(request, 'spacex.html', context)
+
+def starship(request):
+    if not results:
+        return render(request, 'error.html')
+    
+    context = {'json_data': results}
+
+    return render(request, 'starship.html', context)

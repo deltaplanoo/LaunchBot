@@ -3,6 +3,8 @@
 :root {
   --hf-bg-color: var(--gb-light0);
   --hf-color: var(--gb-dark0);
+  --body-bg-color: var(--gb-light0_hard);
+
   --copyright-bg-color: var(--gb-light1);
   --copyright-color: var(--gb-dark0);
 }
@@ -20,6 +22,10 @@ header, header a, a.nav-link, nav button {
   font-size: 1.5rem;
 }
 
+body {
+  background-color: var(--body-bg-color);
+}
+
 body.dark-mode {
   background-color: var(--gb-dark0);
   color: var(--gb-light0);
@@ -31,4 +37,17 @@ footer {
 
 footer #copyright {
   background-color: var(--copyrightcolor);
+}
+
+/* Set specific dimensions for the card */
+.custom-card {
+  width: 60%; /* Set the desired width */
+  height: 40%; /* Set the desired height */
+}
+
+/* Force the image to fill the card while maintaining its aspect ratio */
+.custom-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

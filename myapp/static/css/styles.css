@@ -1,18 +1,56 @@
 @import url(./gruvbox.css);
 
 :root {
+  /* LIGHT THEME */
   --hf-bg-color: var(--gb-light0);
-  --hf-color: var(--gb-dark0);
+  --body-color: var(--gb-dark0);
   --body-bg-color: var(--gb-light0_hard);
-
   --copyright-bg-color: var(--gb-light1);
   --copyright-color: var(--gb-dark0);
+
+  /* DARK THEME */
+  --hf-bg-color-dark: var(--gb-dark0);
+  --body-color-dark: var(--gb-light0);
+  --body-bg-color-dark: var(--gb-dark0_hard);
+  --copyright-bg-color-dark: var(--gb-dark1);
+  --copyright-color-dark: var(--gb-light0);
 }
 
-header, header a, a.nav-link, nav button {
+header, header a, a.nav-link, nav button,
+footer {
   background-color: var(--hf-bg-color);
-  color: var(--hf-color);
+  color: var(--body-color);
   text-decoration: none;
+}
+
+footer #copyright {
+  background-color: var(--copyrightcolor);
+}
+
+body.dark-mode header a,
+body.dark-mode a.nav-link,
+body.dark-mode nav button {
+  background-color: var(--hf-bg-color-dark);
+  color: var(--body-color-dark);
+  text-decoration: none;
+}
+
+body.dark-mode footer #copyright {
+  background-color: var(--copyrightcolor-dark);
+}
+
+body {
+  background-color: var(--body-bg-color);
+  color: var(--body-color);
+}
+
+body.dark-mode{
+  background-color: var(--body-bg-color-dark);
+  color: var(--b);
+}
+
+body.dark-mode header {
+  background-color: var(--hf-bg-color-dark);
 }
 
 #theme-toggle {
@@ -20,21 +58,4 @@ header, header a, a.nav-link, nav button {
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
-}
-
-body {
-  background-color: var(--body-bg-color);
-}
-
-body.dark-mode {
-  background-color: var(--gb-dark0);
-  color: var(--gb-light0);
-}
-
-footer {
-  background-color: var(--hf-bg-color);
-}
-
-footer #copyright {
-  background-color: var(--copyrightcolor);
 }

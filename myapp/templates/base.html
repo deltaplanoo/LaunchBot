@@ -22,16 +22,16 @@
     <nav class="navbar">
       <div class="container-fluid">
         <div class="col-1">
-          <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          <button class="navbar-toggler btn btn-no-border" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <i class="navbar-toggler-icon fas fa-bars"></i>
           </button>
         </div>
         <div class="col-10">
           <a href="{% url 'index' %}"><h1>Launches</h1></a> <!-- FIXME: don't apply format to h1 in header -->
         </div>
         <div class="col-1">
-          <button class="btn" id="theme-toggle">
+          <button class="btn btn-no-border" id="theme-toggle">
             <i class="fas fa-moon"></i>
           </button>
         </div>
@@ -65,15 +65,14 @@
       <!-- Section: Social media -->
       <section class="mb-3">
         <!-- Twitter -->
-        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://x.com/cianiPie" target="_blank"
+        <a class="m-3" href="https://x.com/cianiPie" target="_blank"
           role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i>
         </a>
         <!-- Discord -->
-        <a class="btn btn-link btn-floating btn-lg text-dark m-1"
-          href="https://discord.com/users/683776029994778651" target="_blank" role="button"
+        <a class="m-3" href="https://discord.com/users/683776029994778651" target="_blank" role="button"
           data-mdb-ripple-color="dark"><i class="fab fa-discord"></i></a>
         <!-- Github -->
-        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/deltaplanoo" target="_blank"
+        <a class="m-3" href="https://github.com/deltaplanoo" target="_blank"
           role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
       </section>
     </div>

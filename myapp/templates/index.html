@@ -4,25 +4,29 @@
 
 {% block content %}
   <div class="container">
-    <div class="card text-center mx-auto mb-5" style="width: 70vw;" id="index-card">
-      <img src="https://pbs.twimg.com/media/F_Olf8NbEAE-Aaw?format=jpg&name=4096x4096" class="card-img-top" height=500">
-      <div class="card-body">
-        <h5 class="card-title">Integrated Flight Test 2: successo o fallimento?</h5>
+    <a href="{% url 'upcoming' %}">
+      <div class="card text-center mx-auto mb-5" style="width: 70vw;" id="index-card">
+        <img src="https://pbs.twimg.com/media/F_Olf8NbEAE-Aaw?format=jpg&name=4096x4096" class="card-img-top" height=500">
+        <div class="card-body">
+          <h5 class="card-title">Integrated Flight Test 2: successo o fallimento?</h5>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'starship' %}" class="card-link">Starship</a>
+          <a href="{% url 'spacex' %}" class="card-link">SpaceX</a>
+        </div>
       </div>
-      <div class="card-body">
-        <a href="{% url 'starship' %}" class="card-link">Starship</a>
-        <a href="{% url 'spacex' %}" class="card-link">SpaceX</a>
+    </a>
+    <a href="{% url 'upcoming' %}">
+      <div class="card text-center mx-auto mb-5" style="width: 70vw;" id="index-card">
+        <img src="https://pbs.twimg.com/media/F_Olf8NbEAE-Aaw?format=jpg&name=4096x4096" class="card-img-top" height=500">
+        <div class="card-body">
+          <h5 class="card-title">Integrated Flight Test 2: successo o fallimento?</h5>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'starship' %}" class="card-link">Starship</a>
+          <a href="{% url 'spacex' %}" class="card-link">SpaceX</a>
+        </div>
       </div>
-    </div>
-    <div class="card text-center mx-auto" style="width: 70vw;" id="index-card">
-      <img src="https://pbs.twimg.com/media/F_Olf8NbEAE-Aaw?format=jpg&name=4096x4096" class="card-img-top" height=500">
-      <div class="card-body">
-        <h5 class="card-title">Integrated Flight Test 2</h5>
-      </div>
-      <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
+    </a>
   </div>
 {% endblock %}

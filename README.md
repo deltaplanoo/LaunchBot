@@ -1,6 +1,6 @@
 # LaunchBot
 
-Django app built on top of [Launch Library 2 API](https://thespacedevs.com/llapi)  
+Django app built on top of [Launch Library 2 API](https://ll.thespacedevs.com/docs/)  
 
 ### TODO
 - [x] gruvbox colorscheme

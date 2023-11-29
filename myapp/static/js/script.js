@@ -1,31 +1,19 @@
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
+document.addEventListener('DOMContentLoaded', function() {
+  const body = document.body;
+  const themeToggle = document.getElementById('themeToggle');
 
-// Conditionally format rows
-function condFormat() {
-  var rows = document.querySelectorAll('table tr');
-  rows.forEach(function(row) {
-    if (row.cells[0].textContent === 'TBC') {
-      row.classList.add('table-warning');
-    }else if (row.cells[0].textContent === 'Go') {
-      row.classList.add('table-success');
-    }
-  });
-}
+  function themeSwitch() {
+    body.classList.toggle('dark-mode');
 
-themeToggle.addEventListener('click', function () {
-  // Toggle dark mode for the body
-  body.classList.toggle('dark-mode');
+    const tables = document.querySelectorAll('table');
+    tables.forEach(table => {
+      table.classList.toggle('table-dark');
+    });
 
-  // Toggle dark mode for every table
-  const tables = document.querySelectorAll('table');
-  tables.forEach(table => {
-    table.classList.toggle('table-dark');
-  });
+    const isDarkMode = body.classList.contains('dark-mode');
+    themeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+  }
 
-  // Update the theme toggle button icon
-  const isDarkMode = body.classList.contains('dark-mode');
-  themeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+  // Add event listener for themeToggle button
+  themeToggle.addEventListener('click', themeSwitch);
 });
-
-document.addEventListener('DOMContentLoaded', condFormat);

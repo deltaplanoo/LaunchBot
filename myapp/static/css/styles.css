@@ -5,13 +5,11 @@
   --hf-bg-color: var(--gb-light0);
   --body-color: var(--gb-dark0);
   --body-bg-color: var(--gb-light0_hard);
-  --copyright-bg-color: var(--gb-light1);
 
   /* DARK THEME */
   --hf-bg-color-dark: var(--gb-dark0);
   --body-color-dark: var(--gb-light0);
   --body-bg-color-dark: var(--gb-dark0_hard);
-  --copyright-bg-color-dark: var(--gb-dark1);
 }
 
 body.dark-mode{
@@ -25,10 +23,6 @@ footer, footer a {
   color: var(--body-color);
   text-decoration: none;
 }
-footer #copyright,
-footer #copyright a {
-  background-color: var(--copyright-bg-color);
-}
 body.dark-mode header,
 body.dark-mode header a,
 body.dark-mode a.nav-link,
@@ -38,10 +32,6 @@ body.dark-mode footer a {
   background-color: var(--hf-bg-color-dark);
   color: var(--body-color-dark);
   text-decoration: none;
-}
-body.dark-mode footer #copyright,
-body.dark-mode footer #copyright a {
-  background-color: var(--copyright-bg-color-dark);
 }
 
 body {

@@ -1,16 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main HTML</title>
-</head>
-<body>
+{% extends './myapp/templates/base.html' %}
 
-    <h1>Main HTML Content</h1>
+{% block title %}Launches{% endblock %}
 
-    <!-- Include external HTML file using iframe -->
-    <iframe src="./myapp/templates/index.html" width="600" height="400" title="External Content"></iframe>
-
-</body>
-</html>
+{% block content %}
+  <div class="container">
+    <a href="{% url 'upcoming' %}">
+      <div class="card text-center mx-auto mb-5" style="width: 70vw;" id="index-card">
+        <img src="https://pbs.twimg.com/media/F_Olf8NbEAE-Aaw?format=jpg&name=4096x4096" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Integrated Flight Test 2: successo o fallimento?</h5>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'starship' %}" class="card-link">Starship</a>
+          <a href="{% url 'spacex' %}" class="card-link">SpaceX</a>
+        </div>
+      </div>
+    </a>
+    <a href="{% url 'upcoming' %}">
+      <div class="card text-center mx-auto mb-5" style="width: 70vw; height: 10%;" id="index-card">
+        <img src="https://pbs.twimg.com/media/F_Olf8NbEAE-Aaw?format=jpg&name=4096x4096" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Integrated Flight Test 2: successo o fallimento?</h5>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'starship' %}" class="card-link">Starship</a>
+          <a href="{% url 'spacex' %}" class="card-link">SpaceX</a>
+        </div>
+      </div>
+    </a>
+  </div>
+{% endblock %}

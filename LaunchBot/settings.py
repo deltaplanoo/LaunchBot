@@ -24,7 +24,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -132,8 +131,9 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SECURE_SSL_REDIRECT = True  # Redirect HTTP to HTTPS
+""" SECURE_SSL_REDIRECT = True  # Redirect HTTP to HTTPS
 SESSION_COOKIE_SECURE = True  # Use secure cookies for sessions
 CSRF_COOKIE_SECURE = True  # Use secure cookies for CSRF protection
 SECURE_BROWSER_XSS_FILTER = True  # Enable XSS (cross-site scripting) protection
 SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevent content type sniffing
+ """

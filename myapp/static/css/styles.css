@@ -18,7 +18,7 @@ body.dark-mode{
 
 /* HEADER & FOOTER */
 header, header a, a.nav-link,
-footer, footer a {
+footer, footer a, thead {
   background-color: var(--hf-bg-color);
   color: var(--body-color);
   text-decoration: none;
@@ -28,7 +28,8 @@ body.dark-mode header a,
 body.dark-mode a.nav-link,
 body.dark-mode nav button,
 body.dark-mode footer,
-body.dark-mode footer a {
+body.dark-mode footer a,
+body.dark-mode thead {
   background-color: var(--hf-bg-color-dark);
   color: var(--body-color-dark);
   text-decoration: none;

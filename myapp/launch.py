@@ -3,11 +3,11 @@ import requests
 
 # ===== [URL] ===== #
 base_url = 'https://lldev.thespacedevs.com'
-# Get info about
 launch = '/2.2.0/launch/'
+agencies = '/2.2.0/agencies/'
 # Compose
 launch_url = base_url+launch
-
+agencies_url = base_url+agencies
 
 # ===== [FILTERS & MORE] ===== #
 now = datetime.now()
@@ -32,7 +32,7 @@ ordering = 'ordering=net'
 
 
 # ===== [QUERY URL] ===== #
-query_url = launch_url + '?' + '&'.join(
+query_launch_url = launch_url + '?' + '&'.join(
     (filters, mode, limit, ordering)
 )
 
@@ -46,26 +46,18 @@ def split_datetime(data):
         launch.pop('time', None)
 
 def get_results(query_url: str) -> dict or None:
-    # This script prints exceptions instead of raising them as this is script is only meant as a tutorial.
     try:
-        # Requesting data
         results = requests.get(query_url)
     except Exception as e:
-        # Print exception when it occurs
         print(f'Exception: {e}')
     else:
-        # Checking status of the query
         status = results.status_code
         print(f'Status code: {status}')
-
-        # Return when the query status isn't 200 OK
         # See: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
         if status != 200:
             return
-        # Converting to JSON and returning
         return results.json()
 
 
-# Perform first query
-results = get_results(query_url)
+results = get_results(query_launch_url)
 split_datetime(results)

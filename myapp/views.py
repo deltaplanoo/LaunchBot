@@ -19,6 +19,15 @@ def upcoming(request):
 
     return render(request, 'upcoming.html', context)
 
+def custom(request):
+    if not results:
+        return render(request, 'error.html')
+    
+    context = {'json_data': results}
+
+    return render(request, 'custom.html', context)
+
+
 def spacex(request):
     if not results:
         return render(request, 'error.html')

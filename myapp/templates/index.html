@@ -1,32 +1,37 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Launches{% endblock %}
 
 {% block content %}
-  <div class="container">
-    <a href="{% url 'upcoming' %}">
-      <div class="card text-center mx-auto mb-5" style="width: 70vw;" id="index-card">
-        <img src="https://pbs.twimg.com/media/F_Olf8NbEAE-Aaw?format=jpg&name=4096x4096" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Integrated Flight Test 2: successo o fallimento?</h5>
-        </div>
-        <div class="card-body">
-          <a href="{% url 'starship' %}" class="card-link">Starship</a>
-          <a href="{% url 'spacex' %}" class="card-link">SpaceX</a>
+<link rel="stylesheet" href="{% static 'css/card.css' %}">
+<div class="container">
+  <div class="card my-4 mx-auto">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <div class="card-body mx-2">
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
         </div>
       </div>
-    </a>
-    <a href="{% url 'upcoming' %}">
-      <div class="card text-center mx-auto mb-5" style="width: 70vw; height: 10%;" id="index-card">
-        <img src="https://pbs.twimg.com/media/F_Olf8NbEAE-Aaw?format=jpg&name=4096x4096" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Integrated Flight Test 2: successo o fallimento?</h5>
-        </div>
-        <div class="card-body">
-          <a href="{% url 'starship' %}" class="card-link">Starship</a>
-          <a href="{% url 'spacex' %}" class="card-link">SpaceX</a>
-        </div>
+      <div class="col-md-4">
+        <img src="https://fakeimg.pl/600x600?font=bebas" class="img-fluid rounded-start" alt="...">
       </div>
-    </a>
+    </div>
   </div>
+  <div class="card my-4 mx-auto">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="https://fakeimg.pl/600x600?font=bebas" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body mx-2">
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

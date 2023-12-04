@@ -18,7 +18,7 @@ body.dark-mode{
 
 /* HEADER & FOOTER */
 header, header a, a.nav-link,
-footer, footer a, table.table thead {
+footer, footer a, table.table th {
   background-color: var(--hf-bg-color);
   color: var(--body-color);
   text-decoration: none;
@@ -29,7 +29,7 @@ body.dark-mode a.nav-link,
 body.dark-mode nav button,
 body.dark-mode footer,
 body.dark-mode footer a,
-body.dark-mode table.table thead,
+body.dark-mode table.table th,
 body.dark-mode .card {
   background-color: var(--hf-bg-color-dark);
   color: var(--body-color-dark);

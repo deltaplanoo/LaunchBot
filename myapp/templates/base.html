@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}Base{% endblock %}</title>
+  <title>{% block title %}NxtLaunch{% endblock %}</title>
   <!-- CUSTOM CSS + JS -->
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   <!-- BOOTSTRAP (navbar toggler) -->
@@ -28,7 +28,7 @@
           </button>
         </div>
         <div class="col-10">
-          <a href="{% url 'index' %}"><h1>Launches</h1></a> <!-- FIXME: don't apply format to h1 in header -->
+          <a href="{% url 'index' %}"><h1>NxtLaunch</h1></a> <!-- FIXME: don't apply format to h1 in header -->
         </div>
         <div class="col-1">
           <button class="btn btn-no-border" id="theme-toggle">

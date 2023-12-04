@@ -4,3 +4,9 @@
 	width: 70vw;
 	height: width;
 }
+
+body.dark-mode .card {
+    background-color: var(--hf-bg-color-dark);
+    color: var(--body-color-dark);
+    text-decoration: none;
+}

@@ -11,6 +11,8 @@ Django app built on top of [Launch Library 2 API](https://ll.thespacedevs.com/do
   - [ ] remember theme on refresh
 - [ ] base
   - [ ] make footer stick to page's bottom
+  - [ ] `body.dark-mode` background should be a night sky(animated?)
+  - [ ] light theme background maybe a light sky with sun and clouds 
 - [ ] index
 - [x] upcoming
 - [ ] past

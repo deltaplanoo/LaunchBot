@@ -15,10 +15,11 @@ Available [here](https://nextlaunch.onrender.com/)!
   - [x] make footer stick to page's bottom
   - [ ] `body.dark-mode` background should be a night sky(animated?)
   - [ ] light theme background maybe a light sky with sun and clouds 
-- [ ] index
+- [x] index
 - [x] upcoming
 - [ ] past
   - [x] launches table json integration
+- [ ] custom (feature branch)
   - [ ] select time frame
   - [ ] filter by agency
 - [ ] mobile app(?)

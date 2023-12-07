@@ -1,5 +1,4 @@
 # NxtLaunch
-
 Django app built on top of [Launch Library 2 API](https://ll.thespacedevs.com/docs/)  
 
 Available [here](https://nextlaunch.onrender.com/)!  

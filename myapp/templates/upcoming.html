@@ -20,7 +20,7 @@
       <tbody>
         {% for launch in json_data.results %}
           <tr class="{% if launch.status.abbrev == 'Go' %}table-success
-                      {% elif launch.status.abbrev == 'TBD' or launch.status.abbrev == 'TBC' %}table-warning{% endif %}">
+                      {% elif launch.status.abbrev == 'TBD' or launch.status.abbrev == 'TBC' %}table-warning{% endif %}" id="upcoming">
             <td>{{ launch.status.abbrev }}</td>
             <td>{{ launch.net.date }} {{ launch.net.time }}</td>
             <td>{{ launch.name }}</td>

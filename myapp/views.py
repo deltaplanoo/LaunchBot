@@ -19,6 +19,15 @@ def upcoming(request):
 
     return render(request, 'upcoming.html', context)
 
+def past(request):
+    if not past:
+        return render(request, 'error.html')
+    
+    context = {'json_data': past}
+
+    return render(request, 'past.html', context)
+
+
 def spacex(request):
     if not results:
         return render(request, 'error.html')

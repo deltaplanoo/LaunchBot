@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Launches{% endblock %}
+
+{% block content %}
+  <div class="container">
+      <!-- Launch List -->
+      <!-- TODO: change table theme based on global site theme -->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Time</th>
+          <th>Name</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for launch in json_data.results %}
+          <tr class="{% if launch.status.abbrev == 'Go' %}table-success
+                      {% elif launch.status.abbrev == 'TBD' or launch.status.abbrev == 'TBC' %}table-warning{% endif %}">
+            <td>{{ launch.status.abbrev }}</td>
+            <td>{{ launch.net.date }} {{ launch.net.time }}</td>
+            <td>{{ launch.name }}</td>
+            <td>{{ launch.location }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

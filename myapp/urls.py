@@ -8,6 +8,7 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('upcoming', views.upcoming, name='upcoming'),
+    path('past', views.past, name='past'),
     path('spacex', views.spacex, name='spacex'),
     path('starship', views.starship, name='starship'),
 ]

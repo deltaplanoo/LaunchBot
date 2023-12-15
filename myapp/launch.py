@@ -69,10 +69,10 @@ def get_results(query_url: str) -> dict or None:
 
 
 # Perform first query
-""" results = get_results(future_query_url) """
+results = get_results(future_query_url)
 past = get_results(past_query_url)
 
-""" split_datetime(results) """
+split_datetime(results)
 split_datetime(past)
 
 """ print(past) """

@@ -18,9 +18,9 @@
         </tr>
       </thead>
       <tbody>
-        {% for launch in json_data.results %}
-          <tr class="{% if launch.status.abbrev == 'Go' %}table-success
-                      {% elif launch.status.abbrev == 'TBD' or launch.status.abbrev == 'TBC' %}table-warning{% endif %}">
+        {% for launch in json_data.past %}
+          <tr class="{% if launch.status.abbrev == 'Success' %}table-success
+                      {% elif launch.status.abbrev == 'Failure'%}table-warning{% endif %}">
             <td>{{ launch.status.abbrev }}</td>
             <td>{{ launch.net.date }} {{ launch.net.time }}</td>
             <td>{{ launch.name }}</td>

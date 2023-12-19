@@ -12,10 +12,6 @@
   --body-bg-color-dark: var(--gb-dark0_hard);
 }
 
-body.dark-mode{
-  background-color: var(--body-bg-color-dark);
-}
-
 /* HEADER & FOOTER */
 header, header a, a.nav-link,
 footer, footer a, table.table th {
@@ -38,6 +34,10 @@ body.dark-mode .card {
 body {
   background-color: var(--body-bg-color);
   color: var(--body-color);
+}
+body.body-container.dark-mode{
+  /* background-color: var(--body-bg-color-dark); */
+  background-image: url(../images/arcturus.jpg);
 }
 
 #theme-toggle {

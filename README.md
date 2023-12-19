@@ -13,8 +13,8 @@ Available [here](https://nextlaunch.onrender.com/)!
   - [x] remember theme on refresh
 - [ ] base
   - [x] make footer stick to page's bottom
-  - [ ] `body.dark-mode` background should be a night sky(animated?)
-  - [ ] light theme background maybe a light sky with sun and clouds 
+  - [x] `body.dark-mode` background should be a night sky(animated?)
+  - [ ] light theme background maybe a day sky with sun and clouds
 - [x] index
 - [x] upcoming
   - [ ] detailed page for every launch displayed

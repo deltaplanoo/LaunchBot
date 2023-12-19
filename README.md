@@ -17,6 +17,7 @@ Available [here](https://nextlaunch.onrender.com/)!
   - [ ] light theme background maybe a light sky with sun and clouds 
 - [x] index
 - [x] upcoming
+  - [ ] detailed page for every launch displayed
 - [ ] past
   - [x] launches table json integration
 - [ ] custom (feature branch)

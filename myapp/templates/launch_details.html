@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Launches{% endblock %}
+
+{% block content %}
+<h2>{{ launch.name }}</h2>
+<p>Status: {{ launch.status.abbrev }}</p>
+<p>Time: {{ launch.net.date }} {{ launch.net.time }}</p>
+<p>Location: {{ launch.location }}</p>
+{% endblock %}

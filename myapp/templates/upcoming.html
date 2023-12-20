@@ -23,7 +23,7 @@
                       {% elif launch.status.abbrev == 'TBD' or launch.status.abbrev == 'TBC' %}table-warning{% endif %}" id="upcoming">
             <td>{{ launch.status.abbrev }}</td>
             <td>{{ launch.net.date }} {{ launch.net.time }}</td>
-            <td>{{ launch.name }}</td>
+            <td><a href="{% url 'launch_details' pk=launch.pk %}">{{ launch.name }}</a></td>
             <td>{{ launch.location }}</td>
           </tr>
         {% endfor %}

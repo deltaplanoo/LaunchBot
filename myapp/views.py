@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 import json
 from .launch import *
@@ -43,3 +43,7 @@ def starship(request):
     context = {'json_data': results}
 
     return render(request, 'starship.html', context)
+
+def launch_details(request, pk):
+    launch = get_object_or_404(Launch, pk=pk)
+    return render(request, 'launch_details.html', {'launch': launch})

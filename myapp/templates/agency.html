@@ -7,13 +7,10 @@
 {% block content %}
 <div class="container">
     <h2>{{ json_data.name }}</h2>
-    <p>Status: {{ json_data.status.abbrev }}</p>
     <form id="providerForm" method="post" action="{% url 'agency' %}">
         {% csrf_token %}
         <input type="hidden" name="url" value="{{ json_data.launch_service_provider.url }}">
         <a href="#" onclick="document.getElementById('providerForm').submit();">{{ json_data.launch_service_provider.name }}</a>
-    </form>
-    <p>Time: {{ json_data.net }}</p>
-    <p>Location: {{ launch.location }}</p>
+      </form>
 </div>
 {% endblock %}

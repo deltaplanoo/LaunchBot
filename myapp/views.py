@@ -38,7 +38,6 @@ def starship(request):
 
 def launch_details(request):
     if request.method == 'POST':
-        # Get the 'url' parameter from the form data
         url_parameter = request.POST.get('url', '')
         custom = get_results(url_parameter)
         context = {'json_data': custom}
@@ -50,3 +49,12 @@ def launch_details(request):
 """     custom = get_results(url)
     context = {'json_data': split_datetime(custom)}
     return render(request, 'launch_details.html', context) """
+
+def agency(request):
+    if request.method == 'POST':
+        url_parameter = request.POST.get('url', '')
+        agency = get_results(url_parameter)
+        context = {'json_data': agency}
+        return render(request, 'launch_details.html', context)
+    else:
+        return HttpResponse("Invalid request method")

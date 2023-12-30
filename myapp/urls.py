@@ -12,4 +12,5 @@ urlpatterns = [
     path('spacex', views.spacex, name='spacex'),
     path('starship', views.starship, name='starship'),
     path('launch_details', views.launch_details, name='launch_details'),
+    path('agency', views.agency, name='agency'),
 ]

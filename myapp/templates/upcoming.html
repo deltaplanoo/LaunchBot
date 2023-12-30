@@ -23,7 +23,13 @@
                       {% elif launch.status.abbrev == 'TBD' or launch.status.abbrev == 'TBC' %}table-warning{% endif %}" id="upcoming">
             <td>{{ launch.status.abbrev }}</td>
             <td>{{ launch.net.date }} {{ launch.net.time }}</td>
-            <td><a href="{% url 'launch_details' pk=launch.pk %}">{{ launch.name }}</a></td>
+            <td>
+              <form id="launchDetailsForm" method="post" action="{% url 'launch_details' %}">
+                {% csrf_token %}
+                <input type="hidden" name="url" value="{{ launch.url }}">
+                <a href="#" onclick="document.getElementById('launchDetailsForm').submit();">{{ launch.name }}</a>
+              </form>
+            </td>
             <td>{{ launch.location }}</td>
           </tr>
         {% endfor %}

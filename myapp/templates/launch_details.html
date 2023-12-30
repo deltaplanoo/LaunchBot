@@ -5,8 +5,8 @@
 {% block title %}Launches{% endblock %}
 
 {% block content %}
-<h2>{{ launch.name }}</h2>
+<h2>{{ json_data.name }}</h2>
 <p>Status: {{ launch.status.abbrev }}</p>
-<p>Time: {{ launch.net.date }} {{ launch.net.time }}</p>
+<p>Time: {{ launch.net }}</p>
 <p>Location: {{ launch.location }}</p>
 {% endblock %}

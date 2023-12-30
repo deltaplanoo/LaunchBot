@@ -11,5 +11,5 @@ urlpatterns = [
     path('past', views.past, name='past'),
     path('spacex', views.spacex, name='spacex'),
     path('starship', views.starship, name='starship'),
-    path('launch/<int:pk>/', views.launch_details, name='launch_detail'),
+    path('launch_details', views.launch_details, name='launch_details'),
 ]

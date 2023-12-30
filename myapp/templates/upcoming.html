@@ -24,6 +24,8 @@
             <td>{{ launch.status.abbrev }}</td>
             <td>{{ launch.net.date }} {{ launch.net.time }}</td>
             <td>
+              <!-- TODO: Create different forms to link different elements -->
+              <!-- otherwise it will redirect to the same link for every launch -->
               <form id="launchDetailsForm" method="post" action="{% url 'launch_details' %}">
                 {% csrf_token %}
                 <input type="hidden" name="url" value="{{ launch.url }}">

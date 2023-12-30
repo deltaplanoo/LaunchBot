@@ -39,6 +39,7 @@ def starship(request):
 def launch_details(request):
     if request.method == 'POST':
         url_parameter = request.POST.get('url', '')
+        print(url_parameter)
         custom = get_results(url_parameter)
         context = {'json_data': custom}
         return render(request, 'launch_details.html', context)
